@@ -5,7 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint . && prettier-eslint --list-different **/*.js",
+    "format": "prettier-eslint --write **/*.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +21,11 @@
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
+    "eslint": "^7.24.0",
+    "eslint-plugin-jest": "^24.3.5",
+    "eslint-plugin-react": "^7.23.2",
     "jest": "^23.6.0",
+    "prettier-eslint-cli": "^5.0.1",
     "react-dom": "^16.4.2"
   }
 }
