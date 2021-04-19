@@ -28,6 +28,7 @@
     "eslint-plugin-react": "^7.23.2",
     "jest": "^23.6.0",
     "prettier-eslint-cli": "^5.0.1",
+    "prop-types": "^15.7.2",
     "react-dom": "^16.4.2"
   }
 }
