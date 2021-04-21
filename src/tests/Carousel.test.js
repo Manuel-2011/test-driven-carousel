@@ -101,4 +101,22 @@ describe('Carousel', () => {
       });
     });
   });
+
+  it('passes defaultImg and defaultImgHeight to the CarouselSlide', () => {
+    const defaultImage = () => 'test';
+    const defaultImgHeight = 1234;
+    wrapper.setProps({ defaultImage, defaultImgHeight });
+    expect(wrapper.find(CarouselSlide).prop('Image')).toBe(defaultImage);
+    expect(wrapper.find(CarouselSlide).prop('imgHeight')).toBe(
+      defaultImgHeight
+    );
+  });
+
+  it('allows individual slides to override Img and imgHeight', () => {
+    const Image = () => 'test';
+    const imgHeight = 1234;
+    wrapper.setProps({ slides: [{ ...slides[0], Image, imgHeight }] });
+    expect(wrapper.find(CarouselSlide).prop('Image')).toBe(Image);
+    expect(wrapper.find(CarouselSlide).prop('imgHeight')).toBe(imgHeight);
+  });
 });
