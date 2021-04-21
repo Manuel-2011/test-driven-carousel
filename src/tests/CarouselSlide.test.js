@@ -50,6 +50,14 @@ describe('CarouselSlide', () => {
     expect(wrapper.prop('className')).toBe(className);
   });
 
+  it('renders correctly', () => {
+    wrapper.setProps({
+      description: 'Description',
+      attribution: 'Attribution',
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
+
   describe('Image', () => {
     let mounted;
     const imgUrl = 'https://example.com/default.jpg';
@@ -65,7 +73,7 @@ describe('CarouselSlide', () => {
 
     it('has the expected static styles', () => {
       expect(mounted).toHaveStyleRule('width', '100%');
-      expect(mounted).toHaveStyleRule('object-fit', 'cover');
+      expect(mounted).toHaveStyleRule('object-fit', 'contain');
     });
 
     it('uses imgHeight as the height style property', () => {
@@ -92,6 +100,10 @@ describe('CarouselSlide', () => {
       expect(mounted.find(TestImg)).toHaveStyleRule('width', 'auto');
       expect(mounted.find(TestImg)).toHaveStyleRule('height', 'auto');
       expect(mounted.find(TestImg)).toHaveStyleRule('object-fit', 'fill');
+    });
+
+    it('renders corectly', () => {
+      expect(mounted.find('img')).toMatchSnapshot();
     });
   });
 });
