@@ -43,7 +43,7 @@ export default [
       '&ixid=eyJhcHBfaWQiOjIzODE4fQ&s=e836c604036680eeba5c77ebdb171c73',
   },
   {
-    description: 'New York City',
+    description: 'New York',
     attribution: getAttribution({
       name: 'Anthony DELANOIX',
       username: 'anthonydelanoix',
