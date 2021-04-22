@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Carousel, { Carousel as CoreCarousel } from '../Carousel';
 import CarouselButton from '../CarouselButton';
 import CarouselSlide from '../CarouselSlide';
@@ -118,6 +118,13 @@ describe('Carousel', () => {
 
     it('passes "slides" down to the core component', () => {
       expect(wrapper.find(CoreCarousel).prop('slides')).toBe(slides);
+    });
+
+    it('allows "slideIndex" to be controlled', () => {
+      const mounted = mount(<Carousel slides={slides} slideIndex={1} />);
+      expect(mounted.find(CoreCarousel).prop('slideIndex')).toBe(1);
+      mounted.setProps({ slideIndex: 0 });
+      expect(mounted.find(CoreCarousel).prop('slideIndex')).toBe(0);
     });
   });
 });

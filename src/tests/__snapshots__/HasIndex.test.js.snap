@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`HasIndex() renders correctly 1`] = `
-<MockComponent
-  index={0}
-  indexDecrement={[Function]}
-  indexIncrement={[Function]}
-/>
-`;
