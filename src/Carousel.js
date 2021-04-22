@@ -2,6 +2,7 @@ import React from 'react';
 import CarouselButton from './CarouselButton';
 import CarouselSlide from './CarouselSlide';
 import HasIndex from './HasIndex';
+import AutoAdvances from './AutoAdvances';
 import PropTypes from 'prop-types';
 
 export class Carousel extends React.PureComponent {
@@ -62,4 +63,7 @@ export class Carousel extends React.PureComponent {
   }
 }
 
-export default HasIndex(Carousel, 'slideIndex');
+export default HasIndex(
+  AutoAdvances(Carousel, 'slideIndex', 'slides'),
+  'slideIndex'
+);

@@ -1,4 +1,3 @@
-import { Carousel as CoreCarousel } from '../Carousel';
 import { shallow } from 'enzyme';
 import React from 'react';
 import AutoAdvances from '../AutoAdvances';
